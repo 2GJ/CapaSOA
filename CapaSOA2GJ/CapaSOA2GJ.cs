@@ -10,7 +10,6 @@ namespace CapaSOA2GJ
     {
         public string CodeAnswer;
         public String DescriptionAnswer;
-
         private String InXML;
         private XmlDocument OutXML;
 
