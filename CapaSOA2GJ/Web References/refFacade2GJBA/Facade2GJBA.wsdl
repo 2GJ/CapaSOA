@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="Facade2GJ" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="Facade2GJ" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="Facade2GJ">
+      <s:element name="QryXMLStrByAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryXMLStrByALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QryXMLStrByALResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QryXMLStrByDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryXMLStrByDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QryXMLStrByDSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QryXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryFastStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryFastStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QryFastStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryFastStrByDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QryFastStrByDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QryFastStrByDSResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjectAsync">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="In_IdCase" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="In_IdWI" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="In_User" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjectAsyncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EjectAsyncResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjectAsyncNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="In_IdCase" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="In_IdWI" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="In_User" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjectAsyncNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EjectAsyncNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ping">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PingFacadeQry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PingFacadeQryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PingFacadeQryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QryXMLStrByALSoapIn">
+    <wsdl:part name="parameters" element="tns:QryXMLStrByAL" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByALSoapOut">
+    <wsdl:part name="parameters" element="tns:QryXMLStrByALResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByDSSoapIn">
+    <wsdl:part name="parameters" element="tns:QryXMLStrByDS" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByDSSoapOut">
+    <wsdl:part name="parameters" element="tns:QryXMLStrByDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QryXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QryXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QryFastStr" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QryFastStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrByDSSoapIn">
+    <wsdl:part name="parameters" element="tns:QryFastStrByDS" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrByDSSoapOut">
+    <wsdl:part name="parameters" element="tns:QryFastStrByDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncSoapIn">
+    <wsdl:part name="parameters" element="tns:EjectAsync" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncSoapOut">
+    <wsdl:part name="parameters" element="tns:EjectAsyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncNewSoapIn">
+    <wsdl:part name="parameters" element="tns:EjectAsyncNew" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncNewSoapOut">
+    <wsdl:part name="parameters" element="tns:EjectAsyncNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapIn">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapOut">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingFacadeQrySoapIn">
+    <wsdl:part name="parameters" element="tns:PingFacadeQry" />
+  </wsdl:message>
+  <wsdl:message name="PingFacadeQrySoapOut">
+    <wsdl:part name="parameters" element="tns:PingFacadeQryResponse" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByALHttpGetIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByALHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByDSHttpGetIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByDSHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrHttpGetIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrHttpGetIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrByDSHttpGetIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrByDSHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncHttpGetIn">
+    <wsdl:part name="In_IdCase" type="s:string" />
+    <wsdl:part name="In_IdWI" type="s:string" />
+    <wsdl:part name="In_User" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncNewHttpGetIn">
+    <wsdl:part name="In_IdCase" type="s:string" />
+    <wsdl:part name="In_IdWI" type="s:string" />
+    <wsdl:part name="In_User" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncNewHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PingHttpGetIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PingHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PingFacadeQryHttpGetIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PingFacadeQryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByALHttpPostIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByALHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByDSHttpPostIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrByDSHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrHttpPostIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryXMLStrHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrHttpPostIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrByDSHttpPostIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QryFastStrByDSHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncHttpPostIn">
+    <wsdl:part name="In_IdCase" type="s:string" />
+    <wsdl:part name="In_IdWI" type="s:string" />
+    <wsdl:part name="In_User" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncNewHttpPostIn">
+    <wsdl:part name="In_IdCase" type="s:string" />
+    <wsdl:part name="In_IdWI" type="s:string" />
+    <wsdl:part name="In_User" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EjectAsyncNewHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PingHttpPostIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PingHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PingFacadeQryHttpPostIn">
+    <wsdl:part name="InStr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PingFacadeQryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Facade2GJBASoap">
+    <wsdl:operation name="QryXMLStrByAL">
+      <wsdl:input message="tns:QryXMLStrByALSoapIn" />
+      <wsdl:output message="tns:QryXMLStrByALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStrByDS">
+      <wsdl:input message="tns:QryXMLStrByDSSoapIn" />
+      <wsdl:output message="tns:QryXMLStrByDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStr">
+      <wsdl:input message="tns:QryXMLStrSoapIn" />
+      <wsdl:output message="tns:QryXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStr">
+      <wsdl:input message="tns:QryFastStrSoapIn" />
+      <wsdl:output message="tns:QryFastStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStrByDS">
+      <wsdl:input message="tns:QryFastStrByDSSoapIn" />
+      <wsdl:output message="tns:QryFastStrByDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsync">
+      <wsdl:input message="tns:EjectAsyncSoapIn" />
+      <wsdl:output message="tns:EjectAsyncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsyncNew">
+      <wsdl:input message="tns:EjectAsyncNewSoapIn" />
+      <wsdl:output message="tns:EjectAsyncNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingSoapIn" />
+      <wsdl:output message="tns:PingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PingFacadeQry">
+      <wsdl:input message="tns:PingFacadeQrySoapIn" />
+      <wsdl:output message="tns:PingFacadeQrySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Facade2GJBAHttpGet">
+    <wsdl:operation name="QryXMLStrByAL">
+      <wsdl:input message="tns:QryXMLStrByALHttpGetIn" />
+      <wsdl:output message="tns:QryXMLStrByALHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStrByDS">
+      <wsdl:input message="tns:QryXMLStrByDSHttpGetIn" />
+      <wsdl:output message="tns:QryXMLStrByDSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStr">
+      <wsdl:input message="tns:QryXMLStrHttpGetIn" />
+      <wsdl:output message="tns:QryXMLStrHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStr">
+      <wsdl:input message="tns:QryFastStrHttpGetIn" />
+      <wsdl:output message="tns:QryFastStrHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStrByDS">
+      <wsdl:input message="tns:QryFastStrByDSHttpGetIn" />
+      <wsdl:output message="tns:QryFastStrByDSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsync">
+      <wsdl:input message="tns:EjectAsyncHttpGetIn" />
+      <wsdl:output message="tns:EjectAsyncHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsyncNew">
+      <wsdl:input message="tns:EjectAsyncNewHttpGetIn" />
+      <wsdl:output message="tns:EjectAsyncNewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingHttpGetIn" />
+      <wsdl:output message="tns:PingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PingFacadeQry">
+      <wsdl:input message="tns:PingFacadeQryHttpGetIn" />
+      <wsdl:output message="tns:PingFacadeQryHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Facade2GJBAHttpPost">
+    <wsdl:operation name="QryXMLStrByAL">
+      <wsdl:input message="tns:QryXMLStrByALHttpPostIn" />
+      <wsdl:output message="tns:QryXMLStrByALHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStrByDS">
+      <wsdl:input message="tns:QryXMLStrByDSHttpPostIn" />
+      <wsdl:output message="tns:QryXMLStrByDSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStr">
+      <wsdl:input message="tns:QryXMLStrHttpPostIn" />
+      <wsdl:output message="tns:QryXMLStrHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStr">
+      <wsdl:input message="tns:QryFastStrHttpPostIn" />
+      <wsdl:output message="tns:QryFastStrHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStrByDS">
+      <wsdl:input message="tns:QryFastStrByDSHttpPostIn" />
+      <wsdl:output message="tns:QryFastStrByDSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsync">
+      <wsdl:input message="tns:EjectAsyncHttpPostIn" />
+      <wsdl:output message="tns:EjectAsyncHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsyncNew">
+      <wsdl:input message="tns:EjectAsyncNewHttpPostIn" />
+      <wsdl:output message="tns:EjectAsyncNewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingHttpPostIn" />
+      <wsdl:output message="tns:PingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PingFacadeQry">
+      <wsdl:input message="tns:PingFacadeQryHttpPostIn" />
+      <wsdl:output message="tns:PingFacadeQryHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Facade2GJBASoap" type="tns:Facade2GJBASoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QryXMLStrByAL">
+      <soap:operation soapAction="Facade2GJ/QryXMLStrByAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStrByDS">
+      <soap:operation soapAction="Facade2GJ/QryXMLStrByDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStr">
+      <soap:operation soapAction="Facade2GJ/QryXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStr">
+      <soap:operation soapAction="Facade2GJ/QryFastStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStrByDS">
+      <soap:operation soapAction="Facade2GJ/QryFastStrByDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsync">
+      <soap:operation soapAction="Facade2GJ/EjectAsync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsyncNew">
+      <soap:operation soapAction="Facade2GJ/EjectAsyncNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="Facade2GJ/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PingFacadeQry">
+      <soap:operation soapAction="Facade2GJ/PingFacadeQry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Facade2GJBASoap12" type="tns:Facade2GJBASoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QryXMLStrByAL">
+      <soap12:operation soapAction="Facade2GJ/QryXMLStrByAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStrByDS">
+      <soap12:operation soapAction="Facade2GJ/QryXMLStrByDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStr">
+      <soap12:operation soapAction="Facade2GJ/QryXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStr">
+      <soap12:operation soapAction="Facade2GJ/QryFastStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStrByDS">
+      <soap12:operation soapAction="Facade2GJ/QryFastStrByDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsync">
+      <soap12:operation soapAction="Facade2GJ/EjectAsync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsyncNew">
+      <soap12:operation soapAction="Facade2GJ/EjectAsyncNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="Facade2GJ/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PingFacadeQry">
+      <soap12:operation soapAction="Facade2GJ/PingFacadeQry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Facade2GJBAHttpGet" type="tns:Facade2GJBAHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="QryXMLStrByAL">
+      <http:operation location="/QryXMLStrByAL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStrByDS">
+      <http:operation location="/QryXMLStrByDS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStr">
+      <http:operation location="/QryXMLStr" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStr">
+      <http:operation location="/QryFastStr" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStrByDS">
+      <http:operation location="/QryFastStrByDS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsync">
+      <http:operation location="/EjectAsync" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsyncNew">
+      <http:operation location="/EjectAsyncNew" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <http:operation location="/Ping" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PingFacadeQry">
+      <http:operation location="/PingFacadeQry" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Facade2GJBAHttpPost" type="tns:Facade2GJBAHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="QryXMLStrByAL">
+      <http:operation location="/QryXMLStrByAL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStrByDS">
+      <http:operation location="/QryXMLStrByDS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryXMLStr">
+      <http:operation location="/QryXMLStr" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStr">
+      <http:operation location="/QryFastStr" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QryFastStrByDS">
+      <http:operation location="/QryFastStrByDS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsync">
+      <http:operation location="/EjectAsync" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjectAsyncNew">
+      <http:operation location="/EjectAsyncNew" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <http:operation location="/Ping" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PingFacadeQry">
+      <http:operation location="/PingFacadeQry" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Facade2GJBA">
+    <wsdl:port name="Facade2GJBASoap" binding="tns:Facade2GJBASoap">
+      <soap:address location="http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Facade2GJBASoap12" binding="tns:Facade2GJBASoap12">
+      <soap12:address location="http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Facade2GJBAHttpGet" binding="tns:Facade2GJBAHttpGet">
+      <http:address location="http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Facade2GJBAHttpPost" binding="tns:Facade2GJBAHttpPost">
+      <http:address location="http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

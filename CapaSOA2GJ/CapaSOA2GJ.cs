@@ -14,14 +14,15 @@ namespace CapaSOA2GJ
         private XmlDocument OutXML;
 
         #region Set
-        public void SetInXML(String InXML)
+        public void SetInXML(String In_XML)
         {
-            this.InXML = InXML;
+            this.InXML = In_XML.ToString();
         }
 
-        public void SetOutXML(String InXML)
+        public void SetOutXML(String In_XML)
         {
-            this.OutXML.LoadXml(InXML);
+            this.OutXML = new XmlDocument();
+            this.OutXML.LoadXml(In_XML);
         }
         #endregion
 
@@ -31,7 +32,9 @@ namespace CapaSOA2GJ
             try
             {
                 SOABAWF.WorkflowEngineSOA objSOA = new SOABAWF.WorkflowEngineSOA();
+                objSOA.Url = "http://10.100.70.24/Prod_Colpensiones/webservices/workflowenginesoa.asmx";
                 this.SetOutXML(objSOA.performActivityAsString(this.InXML));
+                this.CapturaRespuestaBA();
             }
             catch (Exception e1)
             {
@@ -96,13 +99,13 @@ namespace CapaSOA2GJ
                         if (XN["errorMessage"] != null)
                             this.DescriptionAnswer += XN["errorMessage"].InnerText;
                         else
-                            sRespuesta = "---EJECUCION CORRECTA---";
+                            this.DescriptionAnswer = "---EJECUCION CORRECTA---";
                     }
                 }
                 else
                 {
                     this.CodeAnswer = "-1";
-                    sRespuesta = "---Formato Respuesta No Reconocido---";
+                    this.DescriptionAnswer = "---Formato Respuesta No Reconocido---";
                 }
             }
         }

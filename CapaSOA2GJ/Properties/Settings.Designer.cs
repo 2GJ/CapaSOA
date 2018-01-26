@@ -26,10 +26,20 @@ namespace CapaSOA2GJ.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://10.130.70.16/Colp_Desa/webservices/workflowenginesoa.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.100.70.24/Prod_Colpensiones/webservices/workflowenginesoa.asmx")]
         public string CapaSOA2GJ_SOABAWF_WorkflowEngineSOA {
             get {
                 return ((string)(this["CapaSOA2GJ_SOABAWF_WorkflowEngineSOA"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx")]
+        public string CapaSOA2GJ_refFacade2GJBA_Facade2GJBA {
+            get {
+                return ((string)(this["CapaSOA2GJ_refFacade2GJBA_Facade2GJBA"]));
             }
         }
     }
