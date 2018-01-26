@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://10.130.70.16/Colp_Desa/webservices/workflowenginesoa.asmx?wsdl" filename="workflowenginesoa.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://10.130.70.16/Colp_Desa/webservices/workflowenginesoa.asmx?disco" filename="workflowenginesoa.disco" />
+  </Results>
+</DiscoveryClientResultsFile>
