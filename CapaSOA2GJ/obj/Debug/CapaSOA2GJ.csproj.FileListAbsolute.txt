@@ -1,5 +1,8 @@
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\CapaSOA\CapaSOA2GJ\bin\Debug\CapaSOA2GJ.dll.config
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\CapaSOA\CapaSOA2GJ\bin\Debug\CapaSOA2GJ.dll
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\CapaSOA\CapaSOA2GJ\bin\Debug\CapaSOA2GJ.pdb
+C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\CapaSOA\CapaSOA2GJ\bin\Debug\Tools2GJ.dll
+C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\CapaSOA\CapaSOA2GJ\bin\Debug\Tools2GJ.pdb
+C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\CapaSOA\CapaSOA2GJ\obj\Debug\CapaSOA2GJ.csprojResolveAssemblyReference.cache
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\CapaSOA\CapaSOA2GJ\obj\Debug\CapaSOA2GJ.dll
 C:\2GJ\MyDocuments\Proyectos\Colombia\Colpensiones\03 - ROBOTs\NewRobot2GJ\CapaSOA\CapaSOA2GJ\obj\Debug\CapaSOA2GJ.pdb

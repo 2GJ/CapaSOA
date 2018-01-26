@@ -44,12 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaFacade2GJ.cs" />
     <Compile Include="CapaSOA2GJ.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\refFacade2GJBA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\SOABAWF\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -67,6 +73,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Web References\refFacade2GJBA\Facade2GJBA.wsdl" />
+    <None Include="Web References\refFacade2GJBA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Web References\SOABAWF\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -77,6 +88,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\refFacade2GJBA\</RelPath>
+      <UpdateFromURL>http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CapaSOA2GJ_refFacade2GJBA_Facade2GJBA</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://10.130.70.16/Colp_Desa/webservices/workflowenginesoa.asmx%3f">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SOABAWF\</RelPath>
@@ -91,6 +113,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\SOABAWF\workflowenginesoa.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\refFacade2GJBA\Facade2GJBA.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tools2GJNet\Tools2GJ.csproj">
+      <Project>{594D7421-600A-47EA-8667-3D2750C257F0}</Project>
+      <Name>Tools2GJ</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
