@@ -26,104 +26,85 @@ namespace CapaSOA2GJ
         #endregion
 
         #region PerformActivity
-        public string PerformActivity()
+        public void PerformActivity()
         {
             try
             {
                 SOABAWF.WorkflowEngineSOA objSOA = new SOABAWF.WorkflowEngineSOA();
                 this.SetOutXML(objSOA.performActivityAsString(this.InXML));
-                return this.CapturaRespuestaBA();
             }
             catch (Exception e1)
             {
-                return "Error CapaSOABizAgi: " + e1.Message;
+                this.CodeAnswer = "999";
+                this.DescriptionAnswer = "Error CAPASOBA: " + e1.Message;
             }
         }
-        public string PerformActivity(string In_Domain, string In_UserName, Int32 In_IdCase, Int32 In_IdTask)
+        public void PerformActivity(string In_Domain, string In_UserName, Int32 In_IdCase, Int32 In_IdTask)
         {
-            string XML = "";
-            XML += "<BizAgiWSParam>";
-            XML += "<domain>" + In_Domain + "</domain>";
-            XML += "<userName>" + In_UserName + "</userName>";
-            XML += "<ActivityData>";
-            XML += "<idCase>" + In_IdCase + "</idCase>";
-            XML += "<taskId>" + In_IdTask + "</taskId>";
-            XML += "</ActivityData>";
-            XML += "</BizAgiWSParam>";
+            try
+            {
+                string XML = "";
+                XML += "<BizAgiWSParam>";
+                XML += "<domain>" + In_Domain + "</domain>";
+                XML += "<userName>" + In_UserName + "</userName>";
+                XML += "<ActivityData>";
+                XML += "<idCase>" + In_IdCase + "</idCase>";
+                XML += "<taskId>" + In_IdTask + "</taskId>";
+                XML += "</ActivityData>";
+                XML += "</BizAgiWSParam>";
 
-            this.SetInXML(XML);
-
-            return this.PerformActivity();
+                this.SetInXML(XML);
+                this.PerformActivity();
+            }
+            catch (Exception e1)
+            {
+                this.CodeAnswer = "999";
+                this.DescriptionAnswer = "Error CAPASOBA: " + e1.Message;
+            }
         }
         #endregion
 
         #region Answer
-        public string CapturaRespuestaBA()
+        public void CapturaRespuestaBA()
         {
-            string sRespuesta = "";
-
-            //xdoc.LoadXml(this.SetOutXML);
             XmlNodeList NodoRC01 = this.OutXML.SelectNodes("/process/processError");
-
             if (NodoRC01.Count > 0)
             {
                 foreach (XmlNode XN in NodoRC01)
                 {
                     if (XN["errorCode"] != null)
-                    {
-                        sRespuesta += XN["errorCode"].InnerText;
-                    }
+                        this.CodeAnswer = XN["errorCode"].InnerText;
                     else
-                    {
-                        sRespuesta += "OK";
-                    }
+                        this.CodeAnswer = "0";
                     if (XN["errorMessage"] != null)
-                    {
-                        sRespuesta += XN["errorMessage"].InnerText;
-                    }
+                        this.DescriptionAnswer = XN["errorMessage"].InnerText;
                     else
-                    {
-                        sRespuesta += "EJECUCION CORRECTA...";
-                    }
+                        this.DescriptionAnswer = "---EJECUCION CORRECTA---";
                 }
             }
             else
             {
                 XmlNodeList NodoRC02 = this.OutXML.SelectNodes("/processes/process/processError");
-
                 if (NodoRC02.Count > 0)
                 {
                     foreach (XmlNode XN in NodoRC02)
                     {
                         if (XN["errorCode"] != null)
-                        {
-                            sRespuesta += XN["errorCode"].InnerText;
-                        }
+                            this.CodeAnswer = XN["errorCode"].InnerText;
                         else
-                        {
-                            sRespuesta += "OK";
-                        }
+                            this.CodeAnswer = "OK";
                         if (XN["errorMessage"] != null)
-                        {
-                            sRespuesta += XN["errorMessage"].InnerText;
-                        }
+                            this.DescriptionAnswer += XN["errorMessage"].InnerText;
                         else
-                        {
-                            sRespuesta += "EJECUCION CORRECTA...";
-                        }
+                            sRespuesta = "---EJECUCION CORRECTA---";
                     }
                 }
                 else
                 {
-                    sRespuesta += "EJECUCION CORRECTA...";
+                    this.CodeAnswer = "-1";
+                    sRespuesta = "---Formato Respuesta No Reconocido---";
                 }
             }
-
-            sRespuesta = sRespuesta.Replace("\n", "");
-            if (sRespuesta == "")
-                sRespuesta = "EJECUCION CORRECTA...";
-
-            return sRespuesta;
         }
         #endregion
     }
