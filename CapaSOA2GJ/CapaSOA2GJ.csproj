@@ -57,6 +57,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\SOABAEM\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\SOABAWF\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,6 +83,11 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Web References\SOABAEM\entitymanagersoa.wsdl" />
+    <None Include="Web References\SOABAEM\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Web References\SOABAWF\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -88,6 +98,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://10.100.70.24/Prod_Colpensiones/webservices/entitymanagersoa.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SOABAEM\</RelPath>
+      <UpdateFromURL>http://10.100.70.24/Prod_Colpensiones/webservices/entitymanagersoa.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CapaSOA2GJ_SOABAEM_EntityManagerSOA</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\refFacade2GJBA\</RelPath>
@@ -116,12 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\refFacade2GJBA\Facade2GJBA.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Tools2GJNet\Tools2GJ.csproj">
-      <Project>{594D7421-600A-47EA-8667-3D2750C257F0}</Project>
-      <Name>Tools2GJ</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,5 +8,8 @@
     <Setting Name="CapaSOA2GJ_refFacade2GJBA_Facade2GJBA" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://10.100.70.24/Prod_Colpensiones/webservices/Facade2GJBA.asmx</Value>
     </Setting>
+    <Setting Name="CapaSOA2GJ_SOABAEM_EntityManagerSOA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.100.70.24/Prod_Colpensiones/webservices/entitymanagersoa.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

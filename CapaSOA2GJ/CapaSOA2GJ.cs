@@ -32,7 +32,7 @@ namespace CapaSOA2GJ
             try
             {
                 SOABAWF.WorkflowEngineSOA objSOA = new SOABAWF.WorkflowEngineSOA();
-                objSOA.Url = "http://10.100.70.24/Prod_Colpensiones/webservices/workflowenginesoa.asmx";
+                //objSOA.Url = "http://10.100.70.24/Prod_Colpensiones/webservices/workflowenginesoa.asmx";
                 this.SetOutXML(objSOA.performActivityAsString(this.InXML));
                 this.CapturaRespuestaBA();
             }
@@ -67,6 +67,45 @@ namespace CapaSOA2GJ
         }
         #endregion
 
+        #region SaveEntity
+        public void SaveEntity()
+        {
+            try
+            {
+                SOABAEM.EntityManagerSOA objSOA = new SOABAEM.EntityManagerSOA();
+                this.SetOutXML(objSOA.saveEntityAsString(this.InXML));
+                this.CapturaRespuestaBA();
+            }
+            catch (Exception e1)
+            {
+                this.CodeAnswer = "999";
+                this.DescriptionAnswer = "Error CAPASOBA: " + e1.Message;
+            }
+        }
+
+        public Int64 InsertSaveEntity(String In_Ent)
+        {
+            this.SetInXML("<BizAgiWSParam><Entities>" + "<" + In_Ent + ">" + this.InXML.ToString() + "</" + In_Ent + ">" + "</Entities></BizAgiWSParam>");
+            
+            SOABAEM.EntityManagerSOA objSOA = new SOABAEM.EntityManagerSOA();
+            this.SetOutXML(objSOA.saveEntityAsString(this.InXML));
+
+            XmlNodeList NodoRC01 = this.OutXML.SelectNodes("/Entities/" + In_Ent);
+            if (NodoRC01.Count > 0)
+            {
+                foreach (XmlNode XN in NodoRC01)
+                {
+                    if (XN.InnerText != null)
+                        return Convert.ToInt64(XN.InnerText.ToString());
+                    else
+                        return 0;
+                }
+            }
+
+            return 0;
+        }
+        #endregion
+
         #region Answer
         public void CapturaRespuestaBA()
         {
@@ -76,11 +115,17 @@ namespace CapaSOA2GJ
                 foreach (XmlNode XN in NodoRC01)
                 {
                     if (XN["errorCode"] != null)
-                        this.CodeAnswer = XN["errorCode"].InnerText;
+                        if (XN["errorCode"].InnerText == "")
+                            this.CodeAnswer = "OK";
+                        else
+                            this.CodeAnswer = XN["errorCode"].InnerText;
                     else
                         this.CodeAnswer = "0";
                     if (XN["errorMessage"] != null)
-                        this.DescriptionAnswer = XN["errorMessage"].InnerText;
+                        if (XN["errorMessage"].InnerText == "")
+                            this.DescriptionAnswer = "---EJECUCION CORRECTA---";
+                        else
+                            this.DescriptionAnswer = XN["errorMessage"].InnerText;
                     else
                         this.DescriptionAnswer = "---EJECUCION CORRECTA---";
                 }
@@ -109,6 +154,7 @@ namespace CapaSOA2GJ
                 }
             }
         }
+       
         #endregion
     }
 }

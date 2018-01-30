@@ -42,5 +42,15 @@ namespace CapaSOA2GJ.Properties {
                 return ((string)(this["CapaSOA2GJ_refFacade2GJBA_Facade2GJBA"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.100.70.24/Prod_Colpensiones/webservices/entitymanagersoa.asmx")]
+        public string CapaSOA2GJ_SOABAEM_EntityManagerSOA {
+            get {
+                return ((string)(this["CapaSOA2GJ_SOABAEM_EntityManagerSOA"]));
+            }
+        }
     }
 }
